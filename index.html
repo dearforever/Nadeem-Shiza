@@ -87,15 +87,22 @@ button:hover,.btn:hover{background:var(--rose);transform:translateY(-2px)}
 .ev i{position:absolute;left:-58px;top:14px;width:44px;height:44px;border-radius:50%;background:var(--wine);color:#F6E7C6;border:2px solid var(--gold);display:grid;place-items:center;font:600 20px 'Cormorant Garamond'}
 .ev h3{font:400 34px 'Great Vibes';color:var(--wine)}
 .ev p{font-size:18px}.ev a{color:var(--rose);display:inline-flex;align-items:center;min-height:44px}
-/* ===== ALBUM ===== */
-.alb{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.alb button{padding:0;min-height:0;border-radius:14px;border:1.5px solid var(--gold);background:var(--card);overflow:hidden;aspect-ratio:3/4;box-shadow:0 0 0 5px var(--card),0 0 0 6px var(--gold2)}
-.alb img{width:100%;height:100%;object-fit:cover;display:block}
-#lb{position:fixed;inset:0;z-index:90;background:rgba(30,8,12,.94);display:none;align-items:center;justify-content:center}
-#lb.on{display:flex}#lb img{max-width:92vw;max-height:80vh;border:2px solid var(--gold);border-radius:8px}
-#lb button{position:absolute;min-width:48px;padding:0;background:rgba(110,20,35,.8)}
-#lb .p{left:10px}#lb .n{right:10px}#lb .x{top:calc(12px + env(safe-area-inset-top));right:12px}
-#lb em{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom));color:var(--gold2);font-size:18px}
+/* ===== INTERACTIVE KEEPSAKE CARDS (REPLACES PHOTO GALLERY) ===== */
+.tap-note{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:-14px 0 24px}
+.vows{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vow{perspective:950px;background:none;border:none;padding:0;min-height:0;border-radius:18px;aspect-ratio:3/4;text-transform:none;letter-spacing:0;font-weight:500;cursor:pointer;display:block;width:100%}
+.vow:hover{background:none;transform:translateY(-3px)}
+.vow-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.4,.2,.2,1)}
+.vow.flip .vow-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:18px;padding:18px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.front{background:linear-gradient(160deg,#FCF7EC,#F2E5CF);border:1.5px solid var(--gold);box-shadow:0 8px 24px rgba(110,20,35,.09),inset 0 0 0 5px var(--card),inset 0 0 0 6px var(--gold2)}
+.front svg{width:76px;height:76px;display:block}
+.front h3{font:400 clamp(30px,7vw,38px)/1.1 'Great Vibes',cursive;color:var(--wine)}
+.front small{font:600 11px 'Cormorant Garamond',serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:4px;border-top:1px solid var(--gold2);padding-top:6px}
+.back{background:radial-gradient(circle at 50% 25%,#8B1E2F,#5B0F1D 85%);color:#F6E7C6;border:1.5px solid var(--gold);box-shadow:0 10px 26px rgba(110,20,35,.22),inset 0 0 0 5px rgba(230,206,152,.18),inset 0 0 0 6px var(--gold);transform:rotateY(180deg)}
+.back b{font:600 12px 'Cormorant Garamond',serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.back p{font:italic 500 clamp(16px,3.8vw,19px)/1.5 'Cormorant Garamond',serif;color:#FAF0DA}
+.back span{font-size:18px;color:var(--gold2);opacity:.8}
 /* ===== FOOTER ===== */
 footer{text-align:center;padding:50px 20px calc(70px + env(safe-area-inset-bottom));background:linear-gradient(var(--bg),#E9D8BC);position:relative}
 footer .script{font-size:clamp(48px,13vw,76px);line-height:1.1}
@@ -117,8 +124,8 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 #snd:hover {transform: scale(1.1);}
 #snd.playing {animation:pulse_snd 2s infinite;}
 @keyframes pulse_snd {0%{box-shadow:0 0 0 0 rgba(184,146,74,0.7);} 70%{box-shadow:0 0 0 10px rgba(184,146,74,0);} 100%{box-shadow:0 0 0 0 rgba(184,146,74,0);}}
-@media(min-width:700px){.alb{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(4,1fr)}}
-@media(prefers-reduced-motion:reduce){.pet,.gl,#fx,.hint,.lan{display:none}.rv{opacity:1;transform:none;transition:none}#env .fl,#env.open #seal,.ring{transition:none;animation:none}.hero-art{transform:none!important}}
+@media(min-width:700px){.vows{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){.pet,.gl,#fx,.hint,.lan{display:none}.rv{opacity:1;transform:none;transition:none}#env .fl,#env.open #seal,.ring,.vow-in{transition:none;animation:none}.hero-art{transform:none!important}}
 </style></head><body class="lock">
 <!-- ===== SHARED SVG SYMBOLS ===== -->
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -126,6 +133,11 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <symbol id="rose" viewBox="-50 -50 100 100"><circle r="44" fill="#6B1222"/><circle r="35" fill="#8B1E2F"/><circle r="25" fill="#A52C41"/><circle r="32" fill="none" stroke="#3d0710" stroke-width="2.5" opacity=".6"/><path d="M-22 0a22 22 0 0 1 44 0M-14 4a14 14 0 0 0 28 0M-6 -6a9 9 0 1 1 12 4" fill="none" stroke="#e08a97" stroke-width="2.5" opacity=".7"/></symbol>
 <symbol id="leaf" viewBox="0 0 20 50"><path d="M10 0C24 18 22 38 10 50 -2 38-4 18 10 0Z" fill="#C9A45C"/><path d="M10 6V46" stroke="#8a6a2c" stroke-width="1"/></symbol>
 <symbol id="orn" viewBox="0 0 150 14"><path d="M0 7H58M92 7H150" stroke="#B8924A"/><path d="M75 1l6 6-6 6-6-6z" fill="#B8924A"/><circle cx="62" cy="7" r="2" fill="#B8924A"/><circle cx="88" cy="7" r="2" fill="#B8924A"/></symbol>
+<!-- Keepsake Card Emblems -->
+<symbol id="ico-rings" viewBox="0 0 100 100"><circle cx="38" cy="56" r="22" fill="none" stroke="#B8924A" stroke-width="4.5"/><circle cx="62" cy="56" r="22" fill="none" stroke="#8B1E2F" stroke-width="4.5"/><path d="M38 22l7 10-7 6-7-6z" fill="#E6CE98" stroke="#B8924A" stroke-width="2"/><path d="M50 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#B8924A"/></symbol>
+<symbol id="ico-rose" viewBox="0 0 100 100"><use href="#leaf" x="14" y="42" width="22" height="44" transform="rotate(-40 25 64)"/><use href="#leaf" x="64" y="42" width="22" height="44" transform="rotate(40 75 64)"/><use href="#rose" x="18" y="12" width="64" height="64"/><path d="M50 74v16" stroke="#8a6a2c" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="ico-lantern" viewBox="0 0 100 100"><path d="M50 10v12" stroke="#B8924A" stroke-width="2.5"/><path d="M36 28c0-6 28-6 28 0l8 22c0 18-10 28-22 28S28 68 28 50z" fill="#FBF0D9" stroke="#B8924A" stroke-width="3"/><path d="M36 28h28M30 50h40M40 76h20" stroke="#B8924A" stroke-width="2"/><circle cx="50" cy="50" r="10" fill="#8B1E2F" opacity=".85"/><path d="M50 42l3 8-3 8-3-8z" fill="#ffe3a0"/><path d="M50 78v10" stroke="#B8924A" stroke-width="2.5"/><circle cx="50" cy="90" r="3" fill="#8B1E2F"/></symbol>
+<symbol id="ico-arch" viewBox="0 0 100 100"><path d="M22 86V48c0-10 10-12 14-20 4-9 10-13 14-18 4 5 10 9 14 18 4 8 14 10 14 20v38Z" fill="none" stroke="#B8924A" stroke-width="3"/><path d="M30 86V50c0-7 7-9 10-15 3-7 7-10 10-14 3 4 7 7 10 14 3 6 10 8 10 15v36" fill="none" stroke="#E6CE98" stroke-width="1.5"/><path d="M50 68c-9-7-14-12-14-18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 6-5 11-14 18Z" fill="#8B1E2F"/><path d="M50 28l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#B8924A"/></symbol>
 <!-- caricature heads, drawn once -->
 <symbol id="hG" viewBox="0 0 100 100"><g fill="#1b1210"><circle cx="30" cy="30" r="15"/><circle cx="50" cy="22" r="17"/><circle cx="70" cy="30" r="15"/><circle cx="24" cy="46" r="9"/><circle cx="76" cy="46" r="9"/></g><ellipse cx="50" cy="56" rx="29" ry="31" fill="#DDAE86"/><circle cx="21" cy="58" r="6" fill="#DDAE86"/><circle cx="79" cy="58" r="6" fill="#DDAE86"/><g fill="#1b1210"><circle cx="39" cy="55" r="3.2"/><circle cx="61" cy="55" r="3.2"/><path d="M31 46q8-6 15-1M54 45q7-5 15 1" stroke="#1b1210" stroke-width="3" fill="none"/></g><path d="M50 58v8" stroke="#c4906a" stroke-width="3" stroke-linecap="round"/><path d="M39 72q11 11 22 0" stroke="#7b2a2a" stroke-width="3.2" fill="#fff" stroke-linejoin="round"/><circle cx="32" cy="66" r="5" fill="#e79c8d" opacity=".5"/><circle cx="68" cy="66" r="5" fill="#e79c8d" opacity=".5"/></symbol>
 <symbol id="hB" viewBox="0 0 100 100"><path d="M50 4C14 4 10 40 12 70c2 16 8 24 8 24h60s6-8 8-24C90 40 86 4 50 4Z" fill="#1d1210"/><ellipse cx="50" cy="52" rx="28" ry="31" fill="#E6BA94"/><path d="M22 44C30 14 62 10 78 44 62 28 40 28 22 44Z" fill="#1d1210"/><circle cx="76" cy="26" r="5" fill="#fff"/><g fill="#1d1210"><circle cx="39" cy="53" r="3.4"/><circle cx="61" cy="53" r="3.4"/><path d="M31 45q8-5 15-1M54 44q7-4 15 1" stroke="#1d1210" stroke-width="2.4" fill="none"/></g><path d="M50 56v7" stroke="#c9946d" stroke-width="3" stroke-linecap="round"/><path d="M40 70q10 10 20 0" stroke="#a02a3c" stroke-width="3.4" fill="#fff" stroke-linejoin="round"/><circle cx="31" cy="64" r="5" fill="#ee9a98" opacity=".55"/><circle cx="69" cy="64" r="5" fill="#ee9a98" opacity=".55"/></symbol>
@@ -167,9 +179,8 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <!-- ===== EVENTS ===== -->
 <section id="events"><p class="eyebrow rv">celebrations</p><h2 class="script rv">Program Timeline</h2><div class="tl" id="tl"></div></section>
 
-<!-- ===== ALBUM ===== -->
-<section id="album"><h2 class="script rv">Our Moments</h2><div class="alb" id="alb"></div></section>
-<div id="lb" role="dialog" aria-label="Photo viewer"><button class="p" aria-label="Previous">&#8249;</button><img alt=""><button class="n" aria-label="Next">&#8250;</button><button class="x" aria-label="Close">&#10005;</button><em></em></div>
+<!-- ===== FOREVER TOGETHER (INTERACTIVE KEEPSAKE CARDS) ===== -->
+<section id="vows"><p class="eyebrow rv">two hearts, one destiny</p><h2 class="script rv">Forever Together</h2><p class="tap-note rv">Tap any card to reveal</p><div class="vows" id="vowGrid"></div></section>
 
 <!-- ===== FOOTER ===== -->
 <footer><svg class="couple rv" viewBox="0 0 220 150" role="img" aria-label="Couple illustration"><use href="#bG" x="30" y="86" width="80" height="64"/><use href="#hG" x="36" y="22" width="68" height="68"/><use href="#bB" x="112" y="86" width="80" height="64"/><use href="#hB" x="118" y="22" width="68" height="68"/><path d="M110 118h4" stroke="#B8924A" stroke-width="3"/></svg>
@@ -245,15 +256,16 @@ if(C.maps&&C.venue){const m=$('#map');m.href=C.maps;m.style.display="block";
  m.innerHTML=`<svg viewBox="0 0 300 140" width="100%" role="img" aria-label="Map"><rect width="300" height="140" rx="10" fill="#EFE3D0"/><path d="M0 100Q90 60 150 80T300 40M120 0Q140 70 90 140M200 0L230 140" stroke="#fff" stroke-width="9" fill="none"/><path d="M150 76c-14-20-14-34 0-34s14 14 0 34z" fill="#6E1423" transform="translate(0 -6) scale(1.4) translate(-60 -12)"/><circle cx="150" cy="52" r="4" fill="#F6E7C6"/></svg><b>${C.venue}</b>${C.address?`<span class="sub-addr">${C.address}</span>`:""}`}
 $('#tl').innerHTML=C.fns.map((f,i)=>`<div class="ev card rv" style="--d:${i*.1}s"><i>${i+1}</i><h3>${f[0]}</h3><p>${f[1]} &middot; ${f[2]}<br>${f[3]}${(f[4]||C.venue)?`<br>${f[4]||C.venue}`:""}${(f[5]||C.dress)?`<br><em>${f[5]||C.dress}</em>`:""}</p>${C.maps?`<a href="${C.maps}" target="_blank" rel="noopener">Get Directions</a>`:""}</div>`).join("");
 
-/* ===== UPDATED IMAGES ARRAY ===== */
-const P=[
-  ["https://i.ibb.co/Jwk1z4F8/e6c3b3990e5ca0b21833ce8ba4394e87.jpg","50% 30%","Couple Portrait 1"],
-  ["https://i.ibb.co/1G2vbbW2/94d3fb69c9491d89d3975d3537bd58c8.jpg","50% 30%","Couple Rings"],
-  ["https://i.ibb.co/C3RS3dZb/85ad6f36433bd6c2e03174a3de6e927c.jpg","50% 50%","Wedding Flowers Setup"],
-  ["https://i.ibb.co/XkzR4nDp/75485c40c639fd251d18267db9fee203.jpg","50% 40%","Romantic Ceremony Moment"]
+/* ===== INTERACTIVE KEEPSAKE CARDS ===== */
+const V=[
+  ["ico-rings","Love","Written in Destiny","Two separate journeys, brought together by destiny into one beautiful story."],
+  ["ico-rose","Trust","Heart to Heart","Hand in hand through every step, building a life of care and devotion."],
+  ["ico-lantern","Joy","Little Moments","From little moments to big dreams, filled with endless laughter and warmth."],
+  ["ico-arch","Forever","11 Dec 2026","The blessed evening when Nadeem & Shiza officially begin their forever."]
 ];
+$('#vowGrid').innerHTML=V.map((v,i)=>`<button type="button" class="vow rv" style="--d:${i*.1}s" aria-pressed="false" aria-label="${v[1]} card"><div class="vow-in"><div class="face front"><svg aria-hidden="true"><use href="#${v[0]}"/></svg><h3>${v[1]}</h3><small>Tap to reveal</small></div><div class="face back"><b>${v[2]}</b><p>&ldquo;${v[3]}&rdquo;</p><span>&#10022;</span></div></div></button>`).join("");
+$('#vowGrid').onclick=e=>{const b=e.target.closest('.vow');if(b){const f=b.classList.toggle('flip');b.setAttribute('aria-pressed',f)}};
 
-$('#alb').innerHTML=P.map((p,i)=>`<button data-i="${i}" class="rv" style="--d:${i*.1}s" aria-label="Open photo ${i+1}"><img src="${p[0]}" alt="${p[2]}" loading="lazy" style="object-position:${p[1]}"></button>`).join("");
 $('#fn').textContent=names.join(" & ");$('#fd').textContent=C.mainLabel;
 set('#fv',C.venue?(C.address?`${C.venue} — ${C.address}`:C.venue):"");
 set('#fm',C.footer);set('#ff',C.families);
@@ -283,13 +295,6 @@ tick();setInterval(tick,1000);
 $('#cal').onclick=()=>{const f=t=>new Date(t).toISOString().replace(/[-:]|\.\d{3}/g,"");
  const ev=C.fns.map(x=>{const s=x[6]?Date.parse(x[6]):Date.parse(`${x[1]} ${x[3]} GMT+0530`);return `BEGIN:VEVENT\nUID:${x[0]}-${s}@invite\nDTSTAMP:${f(Date.now())}\nDTSTART:${f(s)}\nDTEND:${f(s+72e5)}\nSUMMARY:${x[0]} - ${names.join(" & ")}\n${(x[4]||C.venue)?`LOCATION:${x[4]||C.venue}\n`:""}END:VEVENT`}).join("\n");
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([`BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//invite//EN\n${ev}\nEND:VCALENDAR`],{type:'text/calendar'}));a.download='wedding.ics';a.click()};
-/* ===== LIGHTBOX ===== */
-const lb=$('#lb'),li=lb.querySelector('img');let k=0;
-function show(i){k=(i+P.length)%P.length;li.src=P[k][0];li.alt=P[k][2];lb.querySelector('em').textContent=`${k+1} / ${P.length}`}
-$('#alb').onclick=e=>{const b=e.target.closest('button');if(b){show(+b.dataset.i);lb.classList.add('on')}};
-lb.querySelector('.p').onclick=()=>show(k-1);lb.querySelector('.n').onclick=()=>show(k+1);lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
-addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
-let tx=0;lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(k+(d<0?1:-1))},{passive:true});
 /* ===== WISH LANTERNS ===== */
 $('#wish').onclick=()=>{for(let i=0;i<3;i++){const l=document.createElement('i');l.className='lan';l.style.left=(18+i*28)+'vw';l.style.setProperty('--x',(i-1)*40+'px');l.style.animationDelay=i*.5+'s';document.body.appendChild(l);setTimeout(()=>l.remove(),8500)}};
 /* ===== SCROLL REVEAL ===== */
