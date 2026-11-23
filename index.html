@@ -65,11 +65,12 @@ button:hover,.btn:hover{background:var(--rose);transform:translateY(-2px)}
 .hero .date{letter-spacing:.2em;text-transform:uppercase;font-size:19px;color:var(--wine);border-block:1px solid var(--gold);padding:10px 0;margin:18px 0 26px}
 .hint{position:absolute;bottom:18px;left:0;right:0;z-index:2;font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);animation:bob 2s infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
-/* ===== COUPLE ===== */
+/* ===== COUPLE (ROYAL MONOGRAM CRESTS) ===== */
 .pair{display:grid;gap:18px;grid-template-columns:1fr 1fr}
-.pair .card{padding:16px 10px}.pair svg{width:100%;max-width:150px}
-.pair h3{font:400 34px 'Great Vibes';color:var(--wine);line-height:1.2}
-.pair p{font-size:17px;color:var(--mut);margin-top:4px}
+.pair .card{padding:24px 12px}
+.pair .crest{width:112px;height:126px;display:block;margin:8px auto 6px}
+.pair h3{font:400 38px 'Great Vibes';color:var(--wine);line-height:1.15}
+.pair p{font-size:17px;color:var(--mut);margin-top:6px}
 /* ===== STORY ===== */
 .story-card{max-width:680px;margin:auto;padding:28px 24px}
 .story-card p{font-size:20px;line-height:1.75;white-space:pre-line;color:var(--ink)}
@@ -87,7 +88,7 @@ button:hover,.btn:hover{background:var(--rose);transform:translateY(-2px)}
 .ev i{position:absolute;left:-58px;top:14px;width:44px;height:44px;border-radius:50%;background:var(--wine);color:#F6E7C6;border:2px solid var(--gold);display:grid;place-items:center;font:600 20px 'Cormorant Garamond'}
 .ev h3{font:400 34px 'Great Vibes';color:var(--wine)}
 .ev p{font-size:18px}.ev a{color:var(--rose);display:inline-flex;align-items:center;min-height:44px}
-/* ===== INTERACTIVE KEEPSAKE CARDS (REPLACES PHOTO GALLERY) ===== */
+/* ===== INTERACTIVE KEEPSAKE CARDS ===== */
 .tap-note{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:-14px 0 24px}
 .vows{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .vow{perspective:950px;background:none;border:none;padding:0;min-height:0;border-radius:18px;aspect-ratio:3/4;text-transform:none;letter-spacing:0;font-weight:500;cursor:pointer;display:block;width:100%}
@@ -109,7 +110,7 @@ footer .script{font-size:clamp(48px,13vw,76px);line-height:1.1}
 footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 #fm{max-width:600px;margin:18px auto;white-space:pre-line;font-size:19px;line-height:1.7}
 #ff{margin:14px auto 20px;max-width:600px}
-.couple{width:220px;display:block;margin:0 auto}
+.emblem{width:170px;height:130px;display:block;margin:0 auto 4px}
 .lan{position:fixed;bottom:-90px;z-index:60;width:34px;height:52px;pointer-events:none;background:linear-gradient(#ffe3a0,#e8a53d);border:2px solid var(--gold);border-radius:10px 10px 16px 16px;box-shadow:0 0 30px 14px rgba(255,190,80,.6);animation:fly 7s ease-in forwards}
 @keyframes fly{to{transform:translate(var(--x),-115vh);opacity:.1}}
 /* ===== EFFECTS & MUSIC ===== */
@@ -133,16 +134,30 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <symbol id="rose" viewBox="-50 -50 100 100"><circle r="44" fill="#6B1222"/><circle r="35" fill="#8B1E2F"/><circle r="25" fill="#A52C41"/><circle r="32" fill="none" stroke="#3d0710" stroke-width="2.5" opacity=".6"/><path d="M-22 0a22 22 0 0 1 44 0M-14 4a14 14 0 0 0 28 0M-6 -6a9 9 0 1 1 12 4" fill="none" stroke="#e08a97" stroke-width="2.5" opacity=".7"/></symbol>
 <symbol id="leaf" viewBox="0 0 20 50"><path d="M10 0C24 18 22 38 10 50 -2 38-4 18 10 0Z" fill="#C9A45C"/><path d="M10 6V46" stroke="#8a6a2c" stroke-width="1"/></symbol>
 <symbol id="orn" viewBox="0 0 150 14"><path d="M0 7H58M92 7H150" stroke="#B8924A"/><path d="M75 1l6 6-6 6-6-6z" fill="#B8924A"/><circle cx="62" cy="7" r="2" fill="#B8924A"/><circle cx="88" cy="7" r="2" fill="#B8924A"/></symbol>
+<!-- Royal Mughal Monogram Frame (Replaces Cartoon Portraits) -->
+<symbol id="crest-frame" viewBox="0 0 120 135">
+  <path d="M22 118V62c0-13 13-16 18-27 5-12 13-17 20-24 7 7 15 12 20 24 5 11 18 14 18 27v56Z" fill="#FBF6EC" stroke="#B8924A" stroke-width="2.5"/>
+  <path d="M30 118V64c0-10 10-12 14-21 4-9 10-13 16-19 6 6 12 10 16 19 4 9 14 11 14 21v54" fill="none" stroke="#E6CE98" stroke-width="1.5"/>
+  <use href="#leaf" x="14" y="84" width="16" height="36" transform="rotate(-35 22 102)"/>
+  <use href="#leaf" x="90" y="84" width="16" height="36" transform="rotate(35 98 102)"/>
+  <use href="#rose" x="44" y="96" width="32" height="32"/>
+  <path d="M60 4l2.5 5 5 2.5-5 2.5-2.5 5-2.5-5-5-2.5 5-2.5z" fill="#B8924A"/>
+</symbol>
+<!-- Footer Royal Emblem (Replaces Footer Cartoon Couple) -->
+<symbol id="royal-emblem" viewBox="0 0 200 140">
+  <use href="#leaf" x="34" y="54" width="22" height="48" transform="rotate(-48 45 78)"/>
+  <use href="#leaf" x="144" y="54" width="22" height="48" transform="rotate(48 155 78)"/>
+  <circle cx="82" cy="70" r="36" fill="none" stroke="#B8924A" stroke-width="2.5"/>
+  <circle cx="118" cy="70" r="36" fill="none" stroke="#8B1E2F" stroke-width="2.5"/>
+  <circle cx="100" cy="70" r="30" fill="#FBF6EC" stroke="#E6CE98" stroke-width="1.5"/>
+  <use href="#rose" x="84" y="14" width="32" height="32"/>
+  <path d="M100 108l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="#B8924A"/>
+</symbol>
 <!-- Keepsake Card Emblems -->
 <symbol id="ico-rings" viewBox="0 0 100 100"><circle cx="38" cy="56" r="22" fill="none" stroke="#B8924A" stroke-width="4.5"/><circle cx="62" cy="56" r="22" fill="none" stroke="#8B1E2F" stroke-width="4.5"/><path d="M38 22l7 10-7 6-7-6z" fill="#E6CE98" stroke="#B8924A" stroke-width="2"/><path d="M50 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#B8924A"/></symbol>
 <symbol id="ico-rose" viewBox="0 0 100 100"><use href="#leaf" x="14" y="42" width="22" height="44" transform="rotate(-40 25 64)"/><use href="#leaf" x="64" y="42" width="22" height="44" transform="rotate(40 75 64)"/><use href="#rose" x="18" y="12" width="64" height="64"/><path d="M50 74v16" stroke="#8a6a2c" stroke-width="2.5" stroke-linecap="round"/></symbol>
 <symbol id="ico-lantern" viewBox="0 0 100 100"><path d="M50 10v12" stroke="#B8924A" stroke-width="2.5"/><path d="M36 28c0-6 28-6 28 0l8 22c0 18-10 28-22 28S28 68 28 50z" fill="#FBF0D9" stroke="#B8924A" stroke-width="3"/><path d="M36 28h28M30 50h40M40 76h20" stroke="#B8924A" stroke-width="2"/><circle cx="50" cy="50" r="10" fill="#8B1E2F" opacity=".85"/><path d="M50 42l3 8-3 8-3-8z" fill="#ffe3a0"/><path d="M50 78v10" stroke="#B8924A" stroke-width="2.5"/><circle cx="50" cy="90" r="3" fill="#8B1E2F"/></symbol>
 <symbol id="ico-arch" viewBox="0 0 100 100"><path d="M22 86V48c0-10 10-12 14-20 4-9 10-13 14-18 4 5 10 9 14 18 4 8 14 10 14 20v38Z" fill="none" stroke="#B8924A" stroke-width="3"/><path d="M30 86V50c0-7 7-9 10-15 3-7 7-10 10-14 3 4 7 7 10 14 3 6 10 8 10 15v36" fill="none" stroke="#E6CE98" stroke-width="1.5"/><path d="M50 68c-9-7-14-12-14-18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 6-5 11-14 18Z" fill="#8B1E2F"/><path d="M50 28l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#B8924A"/></symbol>
-<!-- caricature heads, drawn once -->
-<symbol id="hG" viewBox="0 0 100 100"><g fill="#1b1210"><circle cx="30" cy="30" r="15"/><circle cx="50" cy="22" r="17"/><circle cx="70" cy="30" r="15"/><circle cx="24" cy="46" r="9"/><circle cx="76" cy="46" r="9"/></g><ellipse cx="50" cy="56" rx="29" ry="31" fill="#DDAE86"/><circle cx="21" cy="58" r="6" fill="#DDAE86"/><circle cx="79" cy="58" r="6" fill="#DDAE86"/><g fill="#1b1210"><circle cx="39" cy="55" r="3.2"/><circle cx="61" cy="55" r="3.2"/><path d="M31 46q8-6 15-1M54 45q7-5 15 1" stroke="#1b1210" stroke-width="3" fill="none"/></g><path d="M50 58v8" stroke="#c4906a" stroke-width="3" stroke-linecap="round"/><path d="M39 72q11 11 22 0" stroke="#7b2a2a" stroke-width="3.2" fill="#fff" stroke-linejoin="round"/><circle cx="32" cy="66" r="5" fill="#e79c8d" opacity=".5"/><circle cx="68" cy="66" r="5" fill="#e79c8d" opacity=".5"/></symbol>
-<symbol id="hB" viewBox="0 0 100 100"><path d="M50 4C14 4 10 40 12 70c2 16 8 24 8 24h60s6-8 8-24C90 40 86 4 50 4Z" fill="#1d1210"/><ellipse cx="50" cy="52" rx="28" ry="31" fill="#E6BA94"/><path d="M22 44C30 14 62 10 78 44 62 28 40 28 22 44Z" fill="#1d1210"/><circle cx="76" cy="26" r="5" fill="#fff"/><g fill="#1d1210"><circle cx="39" cy="53" r="3.4"/><circle cx="61" cy="53" r="3.4"/><path d="M31 45q8-5 15-1M54 44q7-4 15 1" stroke="#1d1210" stroke-width="2.4" fill="none"/></g><path d="M50 56v7" stroke="#c9946d" stroke-width="3" stroke-linecap="round"/><path d="M40 70q10 10 20 0" stroke="#a02a3c" stroke-width="3.4" fill="#fff" stroke-linejoin="round"/><circle cx="31" cy="64" r="5" fill="#ee9a98" opacity=".55"/><circle cx="69" cy="64" r="5" fill="#ee9a98" opacity=".55"/></symbol>
-<symbol id="bG" viewBox="0 0 100 60"><path d="M6 60Q8 10 50 8t44 52Z" fill="#1c1c1f"/><path d="M42 8l8 22 8-22" fill="#E8DFD0"/></symbol>
-<symbol id="bB" viewBox="0 0 100 60"><path d="M6 60Q8 10 50 8t44 52Z" fill="#F4ECDD" stroke="#D9C08A"/><path d="M30 60Q50 24 70 60" fill="none" stroke="#D9A9A0" stroke-width="3" stroke-dasharray="3 4"/></symbol>
 </defs></svg>
 
 <!-- ===== OPENING REVEAL ===== -->
@@ -162,10 +177,24 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <h1 class="script" id="names"></h1><p class="eyebrow" id="sub"></p>
 <div class="date" id="hdate"></div><a class="btn" href="#count" id="std">Save the Date</a></div><div class="hint">Scroll</div></header>
 
-<!-- ===== COUPLE ===== -->
+<!-- ===== COUPLE (ROYAL MONOGRAMS, NO IMAGES) ===== -->
 <section id="couple"><p class="eyebrow rv">the families joyfully present</p><h2 class="script rv">The Couple</h2>
-<div class="pair"><div class="card rv"><b>The Groom</b><svg viewBox="0 0 100 130" role="img" aria-label="Groom caricature"><use href="#bG" y="76" width="100" height="54"/><use href="#hG" width="100" height="100"/></svg><h3 class="gn"></h3><p id="gbio"></p></div>
-<div class="card rv" style="--d:.15s"><b>The Bride</b><svg viewBox="0 0 100 130" role="img" aria-label="Bride caricature"><use href="#bB" y="76" width="100" height="54"/><use href="#hB" width="100" height="100"/></svg><h3 class="bn"></h3><p id="bbio"></p></div></div></section>
+<div class="pair">
+  <div class="card rv"><b>The Groom</b>
+    <svg class="crest" viewBox="0 0 120 135" role="img" aria-label="Groom monogram crest">
+      <use href="#crest-frame"/>
+      <text x="60" y="76" text-anchor="middle" font-family="'Great Vibes',cursive" font-size="44" fill="#6E1423" id="gInit">N</text>
+    </svg>
+    <h3 class="gn"></h3><p id="gbio"></p>
+  </div>
+  <div class="card rv" style="--d:.15s"><b>The Bride</b>
+    <svg class="crest" viewBox="0 0 120 135" role="img" aria-label="Bride monogram crest">
+      <use href="#crest-frame"/>
+      <text x="60" y="76" text-anchor="middle" font-family="'Great Vibes',cursive" font-size="44" fill="#6E1423" id="bInit">S</text>
+    </svg>
+    <h3 class="bn"></h3><p id="bbio"></p>
+  </div>
+</div></section>
 
 <!-- ===== OUR STORY ===== -->
 <section id="story"><p class="eyebrow rv">written by destiny</p><h2 class="script rv">Our Story</h2>
@@ -183,7 +212,11 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <section id="vows"><p class="eyebrow rv">two hearts, one destiny</p><h2 class="script rv">Forever Together</h2><p class="tap-note rv">Tap any card to reveal</p><div class="vows" id="vowGrid"></div></section>
 
 <!-- ===== FOOTER ===== -->
-<footer><svg class="couple rv" viewBox="0 0 220 150" role="img" aria-label="Couple illustration"><use href="#bG" x="30" y="86" width="80" height="64"/><use href="#hG" x="36" y="22" width="68" height="68"/><use href="#bB" x="112" y="86" width="80" height="64"/><use href="#hB" x="118" y="22" width="68" height="68"/><path d="M110 118h4" stroke="#B8924A" stroke-width="3"/></svg>
+<footer>
+<svg class="emblem rv" viewBox="0 0 200 140" role="img" aria-label="Nadeem and Shiza monogram emblem">
+  <use href="#royal-emblem"/>
+  <text x="100" y="78" text-anchor="middle" font-family="'Great Vibes',cursive" font-size="25" fill="#6E1423" id="fInit">N &amp; S</text>
+</svg>
 <svg class="orn" viewBox="0 0 150 14" style="width:150px"><use href="#orn"/></svg>
 <p class="script rv" id="fn"></p><p id="fd"></p><p id="fv"></p><p id="fm"></p><p id="ff" class="eyebrow"></p>
 <a class="btn" id="wa" target="_blank" rel="noopener" hidden>RSVP on WhatsApp</a><button id="wish">Release a Wish</button></footer>
@@ -240,6 +273,9 @@ sndBtn.onclick = () => {
 
 /* ===== FILL CONTENT ===== */
 $('#ini').textContent=C.initials||"&";
+$('#fInit').textContent=C.initials||"&";
+$('#gInit').textContent=G.charAt(0).toUpperCase();
+$('#bInit').textContent=B.charAt(0).toUpperCase();
 set('#bless',C.blessing);set('#sub',C.subtitle);
 $('#names').innerHTML=`${names[0]}<i>&amp;</i>${names[1]}`;$('#hdate').textContent=C.mainLabel;
 document.querySelectorAll('.gn').forEach(e=>e.textContent=G);document.querySelectorAll('.bn').forEach(e=>e.textContent=B);
