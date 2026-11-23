@@ -3,15 +3,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Nadeem &amp; Shiza | Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <!--
  CLIENT DETAILS (Order DF-20261123-5G2ZQN)
- Groom: Nadeem (Son of Meharban & Khalida)
- Bride: Shiza (Daughter of Riyazuddin & Umeda)
- Main date for countdown: 11 December 2026, 7:00 PM IST
- Functions: Wedding | 11 Dec 2026 | Friday | 7:00 PM
+ Groom: Nadeem (Son of Meharban)
+ Bride: Shiza (Daughter of Riyazuddin)
+ Main date for countdown: 11 December 2026, 1:00 PM IST
+ Functions: Wedding | 11 Dec 2026 | Friday | 1:00 PM
  Venue: Kohand, Near Power House, Asandh Road, Kohand
- STYLE DNA: ivory silk, wine-maroon roses, antique gold, mughal arch, wax-seal envelope.
+ STYLE DNA: ivory silk, wine-maroon roses, antique gold, mughal arch, wax-seal envelope, Arabic calligraphy.
 -->
 <style>
 /* ===== BASE ===== */
@@ -22,6 +22,7 @@ body{background:var(--bg);color:var(--ink);font:500 18px/1.6 'Cormorant Garamond
 body.lock{overflow:hidden;height:100vh}
 h1,h2,h3{font-weight:500}
 .script{font-family:'Great Vibes',cursive;font-weight:400;color:var(--wine)}
+.ar{font-family:'Amiri',serif;direction:rtl;unicode-bidi:isolate;font-weight:700}
 section{position:relative;padding:84px 20px;max-width:960px;margin:auto;text-align:center}
 .eyebrow{font-style:italic;color:var(--mut);letter-spacing:.04em}
 h2.script{font-size:clamp(40px,9vw,60px);line-height:1.2;margin:4px 0 26px}
@@ -53,18 +54,34 @@ button:hover,.btn:hover{background:var(--rose);transform:translateY(-2px)}
 @keyframes ring{from{opacity:1;transform:scale(.6)}to{opacity:0;transform:scale(9)}}
 .sp{position:absolute;z-index:3;width:8px;height:8px;background:#ffe3a0;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:sp 1.4s ease-out forwards}
 @keyframes sp{to{transform:translate(var(--x),var(--y)) scale(2.2);opacity:0}}
+#env .env-bism{position:absolute;top:12%;z-index:2;font-size:clamp(22px,6vw,30px);color:var(--wine);text-shadow:0 1px 0 rgba(255,255,255,.6);padding:0 16px;text-align:center}
 #env .inv{position:absolute;bottom:12%;font-style:italic;letter-spacing:.3em;text-transform:uppercase;font-size:15px;color:var(--mut)}
 #env.gone{opacity:0;pointer-events:none}
 /* ===== HERO ===== */
 .hero{position:relative;text-align:center;min-height:100svh;display:grid;place-items:center;padding:60px 20px;overflow:hidden;max-width:none;background:radial-gradient(ellipse at 50% 40%,#FCF7EC,var(--bg) 70%)}
 .hero-art{position:absolute;inset:0;will-change:transform}
 .hero-art svg{position:absolute;left:0;top:0;width:100%;height:100%}
-.hero-in{position:relative;z-index:2;max-width:420px;padding:0 6px}
-.hero h1{font-size:clamp(64px,19vw,120px);line-height:1;margin:14px 0}
+.hero-in{position:relative;z-index:2;max-width:440px;padding:0 8px}
+.bism-wrap{margin-bottom:16px}
+.bism-ar{font-size:clamp(26px,6.8vw,38px);line-height:1.9;color:var(--wine);text-shadow:0 2px 10px rgba(184,146,74,.25)}
+.bism-tr{font-size:14px;font-style:italic;color:var(--mut);letter-spacing:.03em;margin-top:-2px}
+.hero h1{font-size:clamp(60px,18vw,116px);line-height:1;margin:10px 0 12px}
 .hero h1 i{display:block;font-size:.45em;color:var(--gold)}
 .hero .date{letter-spacing:.2em;text-transform:uppercase;font-size:19px;color:var(--wine);border-block:1px solid var(--gold);padding:10px 0;margin:18px 0 26px}
 .hint{position:absolute;bottom:18px;left:0;right:0;z-index:2;font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);animation:bob 2s infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
+/* ===== ARABIC CALLIGRAPHY DUA BANNERS ===== */
+.dua-stack{display:grid;gap:20px;max-width:740px;margin:auto}
+.dua-banner{position:relative;background:radial-gradient(circle at 50% 25%,#460C18,#190408 85%);color:#FCF5E6;border:1.5px solid var(--gold);border-radius:20px;padding:34px 22px;box-shadow:0 14px 34px rgba(30,5,10,.26),inset 0 0 0 6px rgba(230,206,152,.14),inset 0 0 0 7px rgba(184,146,74,.65);overflow:hidden}
+.dua-banner::before,.dua-banner::after{content:"✦";position:absolute;color:var(--gold2);opacity:.45;font-size:18px}
+.dua-banner::before{top:14px;left:18px}
+.dua-banner::after{bottom:14px;right:18px}
+.dua-tag{display:inline-block;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid rgba(230,206,152,.4);padding-bottom:4px;margin-bottom:14px}
+.dua-ar{display:block;font-size:clamp(26px,6.4vw,42px);line-height:2.1;color:#FFFFFF;text-shadow:0 2px 18px rgba(230,206,152,.35);margin:4px 0 12px}
+.dua-ar.sm{font-size:clamp(23px,5.6vw,34px);line-height:2.15}
+.dua-tr{font-size:18px;font-style:italic;color:#F3E5CA;max-width:560px;margin:0 auto;line-height:1.55}
+.dua-ref{display:block;margin-top:10px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);opacity:.85}
+.dua-div{width:110px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);margin:18px auto}
 /* ===== COUPLE (ROYAL MONOGRAM CRESTS) ===== */
 .pair{display:grid;gap:18px;grid-template-columns:1fr 1fr}
 .pair .card{padding:24px 12px}
@@ -107,6 +124,7 @@ button:hover,.btn:hover{background:var(--rose);transform:translateY(-2px)}
 /* ===== FOOTER ===== */
 footer{text-align:center;padding:50px 20px calc(70px + env(safe-area-inset-bottom));background:linear-gradient(var(--bg),#E9D8BC);position:relative}
 footer .script{font-size:clamp(48px,13vw,76px);line-height:1.1}
+footer .foot-ar{font-size:clamp(22px,5.5vw,30px);color:var(--wine);line-height:1.9;margin:4px 0 2px}
 footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 #fm{max-width:600px;margin:18px auto;white-space:pre-line;font-size:19px;line-height:1.7}
 #ff{margin:14px auto 20px;max-width:600px}
@@ -134,7 +152,7 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <symbol id="rose" viewBox="-50 -50 100 100"><circle r="44" fill="#6B1222"/><circle r="35" fill="#8B1E2F"/><circle r="25" fill="#A52C41"/><circle r="32" fill="none" stroke="#3d0710" stroke-width="2.5" opacity=".6"/><path d="M-22 0a22 22 0 0 1 44 0M-14 4a14 14 0 0 0 28 0M-6 -6a9 9 0 1 1 12 4" fill="none" stroke="#e08a97" stroke-width="2.5" opacity=".7"/></symbol>
 <symbol id="leaf" viewBox="0 0 20 50"><path d="M10 0C24 18 22 38 10 50 -2 38-4 18 10 0Z" fill="#C9A45C"/><path d="M10 6V46" stroke="#8a6a2c" stroke-width="1"/></symbol>
 <symbol id="orn" viewBox="0 0 150 14"><path d="M0 7H58M92 7H150" stroke="#B8924A"/><path d="M75 1l6 6-6 6-6-6z" fill="#B8924A"/><circle cx="62" cy="7" r="2" fill="#B8924A"/><circle cx="88" cy="7" r="2" fill="#B8924A"/></symbol>
-<!-- Royal Mughal Monogram Frame (Replaces Cartoon Portraits) -->
+<!-- Royal Mughal Monogram Frame -->
 <symbol id="crest-frame" viewBox="0 0 120 135">
   <path d="M22 118V62c0-13 13-16 18-27 5-12 13-17 20-24 7 7 15 12 20 24 5 11 18 14 18 27v56Z" fill="#FBF6EC" stroke="#B8924A" stroke-width="2.5"/>
   <path d="M30 118V64c0-10 10-12 14-21 4-9 10-13 16-19 6 6 12 10 16 19 4 9 14 11 14 21v54" fill="none" stroke="#E6CE98" stroke-width="1.5"/>
@@ -143,7 +161,7 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
   <use href="#rose" x="44" y="96" width="32" height="32"/>
   <path d="M60 4l2.5 5 5 2.5-5 2.5-2.5 5-2.5-5-5-2.5 5-2.5z" fill="#B8924A"/>
 </symbol>
-<!-- Footer Royal Emblem (Replaces Footer Cartoon Couple) -->
+<!-- Footer Royal Emblem -->
 <symbol id="royal-emblem" viewBox="0 0 200 140">
   <use href="#leaf" x="34" y="54" width="22" height="48" transform="rotate(-48 45 78)"/>
   <use href="#leaf" x="144" y="54" width="22" height="48" transform="rotate(48 155 78)"/>
@@ -162,6 +180,7 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 
 <!-- ===== OPENING REVEAL ===== -->
 <div id="env"><div class="fl t"></div><div class="fl b"></div><span class="ring"></span>
+<div class="env-bism ar" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
 <button id="seal" aria-label="Open the invitation"><span id="ini">N &amp; S</span><small>Tap to open</small></button>
 <div class="inv">You are invited</div></div>
 
@@ -173,11 +192,42 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
 <svg viewBox="0 0 400 800" preserveAspectRatio="xMidYMid meet"><path d="M40 760V340C40 270 100 270 112 210C128 130 180 100 200 44C220 100 272 130 288 210C300 270 360 270 360 340V760" fill="none" stroke="#B8924A" stroke-width="2.5"/><path d="M52 760V345C52 285 108 285 124 218C138 144 184 116 200 66C216 116 262 144 276 218C292 285 348 285 348 345V760" fill="none" stroke="#E6CE98" stroke-width="1"/>
 <use href="#rose" x="-22" y="-22" width="90" height="90"/><use href="#rose" x="40" y="-6" width="60" height="60"/><use href="#rose" x="330" y="-26" width="96" height="96"/><use href="#rose" x="290" y="14" width="56" height="56"/><use href="#rose" x="-24" y="700" width="96" height="96"/><use href="#rose" x="330" y="708" width="84" height="84"/>
 <use href="#leaf" x="62" y="2" width="22" height="55" transform="rotate(-30 70 30)"/><use href="#leaf" x="310" y="-6" width="22" height="55" transform="rotate(35 320 20)"/><use href="#leaf" x="44" y="680" width="22" height="55" transform="rotate(25 50 700)"/><use href="#leaf" x="320" y="680" width="22" height="55" transform="rotate(-25 330 700)"/></svg></div>
-<div class="hero-in"><p class="eyebrow" id="bless"></p>
-<h1 class="script" id="names"></h1><p class="eyebrow" id="sub"></p>
-<div class="date" id="hdate"></div><a class="btn" href="#count" id="std">Save the Date</a></div><div class="hint">Scroll</div></header>
+<div class="hero-in">
+  <div class="bism-wrap">
+    <p class="bism-ar ar" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p class="bism-tr">In the name of Allah, the Most Gracious, the Most Merciful</p>
+  </div>
+  <svg class="orn" viewBox="0 0 150 14"><use href="#orn"/></svg>
+  <p class="eyebrow" id="bless"></p>
+  <h1 class="script" id="names"></h1><p class="eyebrow" id="sub"></p>
+  <div class="date" id="hdate"></div><a class="btn" href="#count" id="std">Save the Date</a>
+</div><div class="hint">Scroll</div></header>
 
-<!-- ===== COUPLE (ROYAL MONOGRAMS, NO IMAGES) ===== -->
+<!-- ===== ARABIC CALLIGRAPHY BLESSINGS & DUAS ===== -->
+<section id="duas">
+  <p class="eyebrow rv">with the blessings of Almighty Allah</p>
+  <h2 class="script rv">Sacred Blessings</h2>
+  <div class="dua-stack">
+    <div class="dua-banner rv">
+      <span class="dua-tag">Quranic Blessing</span>
+      <span class="dua-ar ar" dir="rtl" lang="ar">وَخَلَقْنَاكُمْ أَزْوَاجًا</span>
+      <p class="dua-tr">&ldquo;And We created you in pairs.&rdquo;</p>
+      <span class="dua-ref">Surah An-Naba &middot; 78:8</span>
+      <div class="dua-div"></div>
+      <span class="dua-ar sm ar" dir="rtl" lang="ar">وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</span>
+      <p class="dua-tr">&ldquo;And He has placed between your hearts affection and mercy.&rdquo;</p>
+      <span class="dua-ref">Surah Ar-Rum &middot; 30:21</span>
+    </div>
+    <div class="dua-banner rv" style="--d:.15s">
+      <span class="dua-tag">Dua for the Couple</span>
+      <span class="dua-ar sm ar" dir="rtl" lang="ar">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</span>
+      <p class="dua-tr">&ldquo;May Allah bless you both, shower His blessings upon you, and unite you together in goodness.&rdquo;</p>
+      <span class="dua-ref">Sunnah Nikah Dua</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUPLE (ROYAL MONOGRAMS) ===== -->
 <section id="couple"><p class="eyebrow rv">the families joyfully present</p><h2 class="script rv">The Couple</h2>
 <div class="pair">
   <div class="card rv"><b>The Groom</b>
@@ -217,6 +267,7 @@ footer p{margin:8px 0}footer .btn,footer button{margin:8px 4px}
   <use href="#royal-emblem"/>
   <text x="100" y="78" text-anchor="middle" font-family="'Great Vibes',cursive" font-size="25" fill="#6E1423" id="fInit">N &amp; S</text>
 </svg>
+<p class="foot-ar ar rv" dir="rtl" lang="ar">مَا شَاءَ اللَّهُ &bull; بَارَكَ اللَّهُ فِيكُمَا</p>
 <svg class="orn" viewBox="0 0 150 14" style="width:150px"><use href="#orn"/></svg>
 <p class="script rv" id="fn"></p><p id="fd"></p><p id="fv"></p><p id="fm"></p><p id="ff" class="eyebrow"></p>
 <a class="btn" id="wa" target="_blank" rel="noopener" hidden>RSVP on WhatsApp</a><button id="wish">Release a Wish</button></footer>
@@ -234,20 +285,20 @@ const C={
   initials:"N & S",
   blessing:"Together with their families",
   subtitle:"Cordially invite you to celebrate their wedding",
-  main:"2026-12-11T19:00:00+05:30",
-  mainLabel:"11 December 2026, 7:00 PM IST",
+  main:"2026-12-11T13:00:00+05:30",
+  mainLabel:"11 December 2026, 1:00 PM IST",
   venue:"Kohand",
   address:"Near Power House, Asandh Road, Kohand",
   maps:"https://maps.app.goo.gl/sKwhSVd2wC1G4EXu9?g_st=ic",
   dress:"",
-  groomBio:"Son of Meharban & Khalida",
-  brideBio:"Daughter of Riyazuddin & Umeda",
+  groomBio:"Son of Meharban",
+  brideBio:"Daughter of Riyazuddin",
   story:"Some stories are written by destiny, and ours is one of them. What started as two separate journeys became one beautiful story of love, trust, laughter and togetherness.\n\nFrom little moments to big dreams, every step has brought us closer. And now, we're excited to begin our forever - hand in hand, heart to heart.\n\nOur beautiful journey is just getting started.",
   footer:"Your presence will make our special day even more beautiful. We would be truly delighted to celebrate this precious moment with you.\n\nThank you for being a part of our journey. Come with your blessings, love and smiles as we begin our forever!\n\nWith love,\nThe Couple",
-  families:"With warm regards from the families of Meharban & Khalida and Riyazuddin & Umeda",
+  families:"With warm regards from the families of Meharban and Riyazuddin",
   rsvp:"918295589924",
   fns:[
-    ["Wedding","11 Dec 2026","Friday","7:00 PM","Kohand — Near Power House, Asandh Road","","2026-12-11T19:00:00+05:30"]
+    ["Wedding","11 Dec 2026","Friday","1:00 PM","Kohand — Near Power House, Asandh Road","","2026-12-11T13:00:00+05:30"]
   ]
 };
 const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,
@@ -297,7 +348,7 @@ const V=[
   ["ico-rings","Love","Written in Destiny","Two separate journeys, brought together by destiny into one beautiful story."],
   ["ico-rose","Trust","Heart to Heart","Hand in hand through every step, building a life of care and devotion."],
   ["ico-lantern","Joy","Little Moments","From little moments to big dreams, filled with endless laughter and warmth."],
-  ["ico-arch","Forever","11 Dec 2026","The blessed evening when Nadeem & Shiza officially begin their forever."]
+  ["ico-arch","Forever","11 Dec 2026","The blessed day when Nadeem & Shiza officially begin their forever."]
 ];
 $('#vowGrid').innerHTML=V.map((v,i)=>`<button type="button" class="vow rv" style="--d:${i*.1}s" aria-pressed="false" aria-label="${v[1]} card"><div class="vow-in"><div class="face front"><svg aria-hidden="true"><use href="#${v[0]}"/></svg><h3>${v[1]}</h3><small>Tap to reveal</small></div><div class="face back"><b>${v[2]}</b><p>&ldquo;${v[3]}&rdquo;</p><span>&#10022;</span></div></div></button>`).join("");
 $('#vowGrid').onclick=e=>{const b=e.target.closest('.vow');if(b){const f=b.classList.toggle('flip');b.setAttribute('aria-pressed',f)}};
